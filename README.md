@@ -4,6 +4,8 @@ Método de piano personal (jazz y clásico) para retomar el instrumento con sesi
 
 **Web:** https://santifu.github.io/piano/
 
+**¿De qué va?** Lee la [metodología](metodologia.md): quién, para qué, cómo se estructura cada lección y quién hace qué. Es también la portada de la web.
+
 ## Qué hay
 
 - **Sesiones:** cada sesión empieza con un poco de teoría, muestra en un teclado dónde van las notas de cada acorde (mano izquierda y derecha) y tiene su partitura (PDF, que se ve dentro de la página) y uno o varios MIDI con reproductor. El reproductor permite bajar el tempo sin cambiar la altura de las notas.
@@ -15,6 +17,7 @@ El método sigue el temario ABRSM (objetivo: Grado 1), Faber *Adult Piano Advent
 
 ```
 index.html            la web (estática, sin servidor)
+metodologia.md        portada: de qué va el proyecto y la metodología
 assets/               estilos y lógica (pdf.js, Magenta.js, marked)
 sesiones/
   NN-tipo-tema/       una carpeta por sesión: PDF, MIDI, teoria.md e info.json

@@ -186,3 +186,23 @@ details[open] .flecha { transform: none; }
 .lista-der { display: flex; align-items: center; gap: 8px; flex: none; }
 .check { color: var(--clasico); font-weight: 500; }
 .teclado .dedo { font: 500 11px var(--sans); fill: #fff; text-anchor: middle; }
+
+/* Inicio */
+.inicio { max-width: 760px; }
+.hoy {
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px;
+  padding: 18px 20px; border-radius: 14px; text-decoration: none;
+  background: var(--accent-bg); border: 1px solid var(--border);
+}
+.hoy .etiqueta-sup { margin: 0; color: var(--accent); }
+.hoy strong { font: 500 24px/1.25 var(--serif); }
+.hoy > span:last-child { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--accent); }
+.metodologia h1 { font-size: 26px; margin: 8px 0 10px; }
+.metodologia h2 { font-size: 20px; margin: 28px 0 8px; }
+.metodologia table { width: 100%; }
+.metodologia td, .metodologia th { text-align: left; font-weight: 400; border: 1px solid var(--border); padding: 6px 10px; }
+.metodologia td:first-child { font-weight: 500; white-space: nowrap; }
+.metodologia thead { display: table-header-group; }
+.metodologia th { font-weight: 500; }
+.metodologia a { color: var(--accent); }
+@media (max-width: 420px) { .top nav a { padding: 6px 9px; } }

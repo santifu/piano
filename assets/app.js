@@ -27,12 +27,42 @@ async function iniciar() {
 function ruta() {
   pararReproductor();
   const [, seccion, id] = location.hash.split("/");
-  document.querySelectorAll("[data-nav]").forEach((a) =>
-    a.classList.toggle("activo", a.dataset.nav === (seccion === "diario" ? "diario" : "sesiones"))
-  );
+  const activa = seccion === "diario" ? "diario" : seccion === "sesion" || seccion === "sesiones" ? "sesiones" : "inicio";
+  document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("activo", a.dataset.nav === activa));
   window.scrollTo(0, 0);
-  if (seccion === "diario") return vistaDiario();
+  if (activa === "diario") return vistaDiario();
+  if (activa === "inicio") return vistaInicio();
   vistaSesion(seccion === "sesion" ? decodeURIComponent(id || "") : null);
+}
+
+/* ---------- Inicio ---------- */
+
+async function vistaInicio() {
+  const hechas = new Set(diario.map((e) => e.fecha));
+  const ultima = sesiones[0];
+  const completadas = sesiones.filter((s) => s.fecha && hechas.has(s.fecha)).length;
+  const minutos = diario.reduce((a, e) => a + e.min, 0);
+  app.innerHTML = `
+    <div class="inicio">
+      ${ultima ? `
+        <a class="hoy" href="#/sesion/${encodeURIComponent(ultima.id)}">
+          <span class="etiqueta-sup">${hechas.has(ultima.fecha) ? "Última lección · completada" : "Lección de hoy"}</span>
+          <strong>${esc(ultima.titulo)}</strong>
+          <span><span class="tipo ${esc(ultima.tipo)}">${esc(ultima.tipo)}</span> Ir a la lección →</span>
+        </a>` : ""}
+      <div class="stats">
+        <div class="stat"><span>Lecciones</span><strong>${sesiones.length}</strong></div>
+        <div class="stat"><span>Completadas</span><strong>${completadas}</strong></div>
+        <div class="stat"><span>Minutos</span><strong>${minutos}</strong></div>
+      </div>
+      <article class="metodologia teoria" id="metodologia"><p class="vacio">Cargando…</p></article>
+    </div>`;
+  try {
+    const md = await (await fetch("metodologia.md", { cache: "no-store" })).text();
+    document.getElementById("metodologia").innerHTML = marked.parse(md);
+  } catch {
+    document.getElementById("metodologia").innerHTML = "";
+  }
 }
 
 /* ---------- Sesiones ---------- */
