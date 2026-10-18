@@ -140,3 +140,34 @@ h2 { font-size: 20px; margin: 0 0 12px; }
 .entrada ul { margin: 0; padding-left: 18px; color: var(--text-2); }
 .entrada li strong { color: var(--text); font-weight: 500; }
 .vacio { color: var(--text-3); }
+
+/* Teclado */
+:root { --mi: #1d9e75; --md: #c8622f; --tecla-blanca: #fff; --tecla-negra: #2a2925; --tecla-borde: rgba(31, 30, 27, 0.25); }
+@media (prefers-color-scheme: dark) {
+  :root { --mi: #3fbf93; --md: #e9875c; --tecla-blanca: #e9e6df; --tecla-negra: #111; --tecla-borde: rgba(0, 0, 0, 0.5); }
+}
+.leyenda { font-size: 12px; color: var(--text-2); display: flex; align-items: center; gap: 6px; }
+.leyenda i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.leyenda i.mi { background: var(--mi); }
+.leyenda i.md { background: var(--md); margin-left: 6px; }
+.acorde + .acorde { border-top: 1px solid var(--border); margin-top: 14px; padding-top: 14px; }
+.acorde-cab { margin: 0 0 8px; font-size: 14px; }
+.acorde-cab strong { font: 500 18px var(--serif); margin-right: 6px; }
+.acorde-cab span { color: var(--text-3); }
+.acorde-nota { margin: 6px 0 0; font-size: 14px; color: var(--text-2); }
+.teclado { display: block; width: 100%; max-width: 560px; height: auto; }
+.teclado .et { font: 500 11px var(--sans); text-anchor: middle; }
+.teclado .et.mi { fill: var(--mi); }
+.teclado .et.md { fill: var(--md); }
+.teclado .do-central { font: 9px var(--sans); fill: #8b8982; text-anchor: middle; }
+
+/* Teoría */
+.teoria h3 { font: 500 17px/1.3 var(--serif); margin: 18px 0 6px; }
+.teoria h3:first-child { margin-top: 0; }
+.teoria p, .teoria li { color: var(--text-2); max-width: 66ch; }
+.teoria p { margin: 0 0 10px; }
+.teoria ul { margin: 0 0 10px; padding-left: 20px; }
+.teoria strong { color: var(--text); font-weight: 500; }
+.teoria table { border-collapse: collapse; margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
+.teoria thead { display: none; }
+.teoria td { border: 1px solid var(--border); padding: 6px 14px; text-align: center; font-weight: 500; }

@@ -32,6 +32,8 @@ def sesion(carpeta: Path) -> dict:
         "titulo": info.get("titulo", slug.replace("-", " ").capitalize()),
         "fecha": info.get("fecha"),
         "descripcion": info.get("descripcion", ""),
+        "teclado": info.get("teclado", []),
+        "teoria": f"sesiones/{carpeta.name}/teoria.md" if (carpeta / "teoria.md").exists() else None,
     }
     for clave, extensiones in EXT.items():
         datos[clave] = [

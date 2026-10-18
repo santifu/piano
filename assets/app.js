@@ -49,7 +49,16 @@ function vistaSesion(id) {
         <p class="etiqueta-sup">${esUltima ? "Última sesión" : `Sesión ${esc(s.num)}`}${s.fecha ? ` · ${esc(s.fecha)}` : ""}</p>
         <h1>${esc(s.titulo)} <span class="tipo ${esc(s.tipo)}">${esc(s.tipo)}</span></h1>
         ${s.descripcion ? `<p class="desc">${esc(s.descripcion)}</p>` : ""}
+        ${s.teoria ? `<section class="bloque teoria"><div class="bloque-cab"><h2>Teoría</h2></div><div id="teoria"><p class="vacio">Cargando…</p></div></section>` : ""}
         ${s.midi.length ? `<section class="bloque" id="midis"><div class="bloque-cab"><h2>Escuchar</h2></div></section>` : ""}
+        ${s.teclado?.length ? `
+          <section class="bloque">
+            <div class="bloque-cab">
+              <h2>Posición en el teclado</h2>
+              <span class="leyenda"><i class="mi"></i>Izquierda <i class="md"></i>Derecha</span>
+            </div>
+            ${s.teclado.map((a) => htmlAcorde(a, rango(s.teclado))).join("")}
+          </section>` : ""}
         ${s.audio.map((a) => `<section class="bloque"><p class="midi-nombre">${esc(nombre(a))}</p><audio controls preload="none" src="${encodeURI(a)}" style="width:100%"></audio></section>`).join("")}
         ${s.pdf.map((p, i) => `
           <section class="bloque">
@@ -78,6 +87,68 @@ function vistaSesion(id) {
   const midis = document.getElementById("midis");
   s.midi.forEach((m) => midis.appendChild(crearReproductor(m)));
   s.pdf.forEach((p, i) => pintarPdf(p, document.getElementById(`pdf-${i}`)));
+  if (s.teoria) {
+    fetch(encodeURI(s.teoria), { cache: "no-store" })
+      .then((r) => r.text())
+      .then((md) => { document.getElementById("teoria").innerHTML = marked.parse(md); })
+      .catch(() => { document.getElementById("teoria").innerHTML = ""; });
+  }
+}
+
+/* ---------- Teclado ---------- */
+
+const CLASE = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+const SOLFEO = { C: "Do", D: "Re", E: "Mi", F: "Fa", G: "Sol", A: "La", B: "Si" };
+const NEGRAS = [1, 3, 6, 8, 10];
+
+function midiDe(nota) {
+  const [, letra, alt, oct] = nota.match(/^([A-G])(b|#)?(-?\d)$/);
+  return 12 * (Number(oct) + 1) + CLASE[letra] + (alt === "#" ? 1 : alt === "b" ? -1 : 0);
+}
+
+function nombreNota(nota) {
+  const [, letra, alt] = nota.match(/^([A-G])(b|#)?/);
+  return SOLFEO[letra] + (alt === "b" ? "♭" : alt === "#" ? "♯" : "");
+}
+
+function rango(acordes) {
+  const notas = acordes.flatMap((a) => [...(a.mi || []), ...(a.md || [])]).map(midiDe);
+  return [12 * Math.floor(Math.min(...notas) / 12), 12 * Math.floor(Math.max(...notas) / 12) + 11];
+}
+
+function svgTeclado(mi, md, [desde, hasta]) {
+  const W = 20, H = 92, NW = 12, NH = 58;
+  const marcadas = new Map();
+  mi.forEach((n) => marcadas.set(midiDe(n), { mano: "mi", n }));
+  md.forEach((n) => marcadas.set(midiDe(n), { mano: "md", n }));
+  let blancas = "", negras = "", etiquetas = "", x = 0;
+  for (let m = desde; m <= hasta; m++) {
+    const marca = marcadas.get(m);
+    const relleno = marca ? `var(--${marca.mano})` : null;
+    if (NEGRAS.includes(m % 12)) {
+      const cx = x;
+      negras += `<rect x="${cx - NW / 2}" y="0" width="${NW}" height="${NH}" rx="2" fill="${relleno || "var(--tecla-negra)"}"/>`;
+      if (marca) etiquetas += `<text x="${cx}" y="${H + 16}" class="et ${marca.mano}">${nombreNota(marca.n)}</text>`;
+    } else {
+      const cx = x + W / 2;
+      blancas += `<rect x="${x}" y="0" width="${W}" height="${H}" rx="3" fill="${relleno || "var(--tecla-blanca)"}" stroke="var(--tecla-borde)"/>`;
+      if (marca) etiquetas += `<text x="${cx}" y="${H + 16}" class="et ${marca.mano}">${nombreNota(marca.n)}</text>`;
+      else if (m === 60) etiquetas += `<text x="${cx}" y="${H - 8}" class="do-central">Do4</text>`;
+      x += W;
+    }
+  }
+  return `<svg class="teclado" viewBox="-1 -1 ${x + 2} ${H + 24}" role="img"
+    aria-label="Izquierda: ${mi.map(nombreNota).join(", ")}. Derecha: ${md.map(nombreNota).join(", ")}">
+    ${blancas}${negras}${etiquetas}</svg>`;
+}
+
+function htmlAcorde(a, r) {
+  return `
+    <div class="acorde">
+      <p class="acorde-cab"><strong>${esc(a.acorde)}</strong>${a.compases ? ` <span>compases ${esc(a.compases)}</span>` : ""}</p>
+      ${svgTeclado(a.mi || [], a.md || [], r)}
+      ${a.nota ? `<p class="acorde-nota">${esc(a.nota)}</p>` : ""}
+    </div>`;
 }
 
 async function pintarPdf(url, contenedor) {

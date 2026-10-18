@@ -6,7 +6,7 @@ Método de piano personal (jazz y clásico) para retomar el instrumento con sesi
 
 ## Qué hay
 
-- **Sesiones:** cada sesión tiene su partitura (PDF, que se ve dentro de la página) y uno o varios MIDI con reproductor. El reproductor permite bajar el tempo sin cambiar la altura de las notas.
+- **Sesiones:** cada sesión empieza con un poco de teoría, muestra en un teclado dónde van las notas de cada acorde (mano izquierda y derecha) y tiene su partitura (PDF, que se ve dentro de la página) y uno o varios MIDI con reproductor. El reproductor permite bajar el tempo sin cambiar la altura de las notas.
 - **Diario:** registro de cada sesión: qué se trabajó, qué salió, dónde hubo atascos y qué toca la próxima vez.
 
 El método sigue el temario ABRSM (objetivo: Grado 1), Faber *Adult Piano Adventures* como base, y en jazz la progresión blues → guide tones → shell voicings → ii–V–I. Las partituras son ejercicios originales o de dominio público, generados con LilyPond.
@@ -17,7 +17,7 @@ El método sigue el temario ABRSM (objetivo: Grado 1), Faber *Adult Piano Advent
 index.html            la web (estática, sin servidor)
 assets/               estilos y lógica (pdf.js, Magenta.js, marked)
 sesiones/
-  NN-tipo-tema/       una carpeta por sesión: PDF, MIDI e info.json opcional
+  NN-tipo-tema/       una carpeta por sesión: PDF, MIDI, teoria.md e info.json
 diario.md             entradas del diario
 scripts/build_index.py  genera sessions.json a partir de sesiones/
 .github/workflows/    publica en GitHub Pages en cada push a main
@@ -26,8 +26,13 @@ scripts/build_index.py  genera sessions.json a partir de sesiones/
 `info.json` (opcional) sobrescribe los datos que se sacan del nombre de la carpeta:
 
 ```json
-{ "titulo": "Blues en Do · guide tones", "tipo": "jazz", "fecha": "2026-10-19", "descripcion": "…" }
+{
+  "titulo": "Blues en Do · guide tones", "tipo": "jazz", "fecha": "2026-10-19", "descripcion": "…",
+  "teclado": [{ "acorde": "C7", "compases": "1, 3–4", "mi": ["C3"], "md": ["E4", "Bb4"], "nota": "3ª y 7ª" }]
+}
 ```
+
+`teclado` dibuja un teclado por acorde (`mi` = mano izquierda, `md` = mano derecha, notas en cifrado inglés con octava, Do central = C4). `teoria.md` se muestra al principio de la sesión.
 
 ## Añadir una sesión
 
