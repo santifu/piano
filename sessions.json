@@ -24,7 +24,21 @@
           "F4",
           "G4"
         ],
-        "nota": "Der.: pulgar en Do4. Izq.: meñique en Do3."
+        "nota": "Der.: pulgar en Do4. Izq.: meñique en Do3.",
+        "dedos_mi": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       },
       {
         "acorde": "Posición de Sol",
@@ -43,7 +57,21 @@
           "C5",
           "D5"
         ],
-        "nota": "Der.: pulgar en Sol4. Izq.: meñique en Sol2. Todo teclas blancas, igual que en Do."
+        "nota": "Der.: pulgar en Sol4. Izq.: meñique en Sol2. Todo teclas blancas, igual que en Do.",
+        "dedos_mi": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       }
     ],
     "teoria": "sesiones/02-clasico-posicion-de-do/teoria.md",
@@ -74,7 +102,14 @@
           "E4",
           "Bb4"
         ],
-        "nota": "3ª (Mi) y 7ª (Si♭)"
+        "nota": "3ª (Mi) con el pulgar y 7ª (Si♭) con el 4. Izquierda: meñique.",
+        "dedos_mi": [
+          5
+        ],
+        "dedos_md": [
+          1,
+          4
+        ]
       },
       {
         "acorde": "F7",
@@ -86,7 +121,14 @@
           "Eb4",
           "A4"
         ],
-        "nota": "7ª (Mi♭) y 3ª (La): desde C7, cada dedo baja medio tono"
+        "nota": "7ª (Mi♭) y 3ª (La): misma forma de mano que en C7, desliza todo medio tono hacia abajo.",
+        "dedos_mi": [
+          5
+        ],
+        "dedos_md": [
+          1,
+          4
+        ]
       },
       {
         "acorde": "G7",
@@ -98,7 +140,14 @@
           "F4",
           "B4"
         ],
-        "nota": "7ª (Fa) y 3ª (Si)"
+        "nota": "7ª (Fa) y 3ª (Si), otra vez 1–4. De F7 a G7 sube un tono; de C7 a G7, medio tono hacia arriba.",
+        "dedos_mi": [
+          5
+        ],
+        "dedos_md": [
+          1,
+          4
+        ]
       }
     ],
     "teoria": "sesiones/01-jazz-blues-guide-tones/teoria.md",

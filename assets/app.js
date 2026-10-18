@@ -169,11 +169,11 @@ function rango(acordes) {
   return [12 * Math.floor(Math.min(...notas) / 12), 12 * Math.floor(Math.max(...notas) / 12) + 11];
 }
 
-function svgTeclado(mi, md, [desde, hasta]) {
+function svgTeclado(mi, md, [desde, hasta], dedosMi = [], dedosMd = []) {
   const W = 20, H = 92, NW = 12, NH = 58;
   const marcadas = new Map();
-  mi.forEach((n) => marcadas.set(midiDe(n), { mano: "mi", n }));
-  md.forEach((n) => marcadas.set(midiDe(n), { mano: "md", n }));
+  mi.forEach((n, i) => marcadas.set(midiDe(n), { mano: "mi", n, dedo: dedosMi[i] }));
+  md.forEach((n, i) => marcadas.set(midiDe(n), { mano: "md", n, dedo: dedosMd[i] }));
   let blancas = "", negras = "", etiquetas = "", x = 0;
   for (let m = desde; m <= hasta; m++) {
     const marca = marcadas.get(m);
@@ -181,10 +181,12 @@ function svgTeclado(mi, md, [desde, hasta]) {
     if (NEGRAS.includes(m % 12)) {
       const cx = x;
       negras += `<rect x="${cx - NW / 2}" y="0" width="${NW}" height="${NH}" rx="2" fill="${relleno || "var(--tecla-negra)"}"/>`;
+      if (marca?.dedo) negras += `<text x="${cx}" y="${NH - 8}" class="dedo">${marca.dedo}</text>`;
       if (marca) etiquetas += `<text x="${cx}" y="${H + 16}" class="et ${marca.mano}">${nombreNota(marca.n)}</text>`;
     } else {
       const cx = x + W / 2;
       blancas += `<rect x="${x}" y="0" width="${W}" height="${H}" rx="3" fill="${relleno || "var(--tecla-blanca)"}" stroke="var(--tecla-borde)"/>`;
+      if (marca?.dedo) blancas += `<text x="${cx}" y="${H - 10}" class="dedo">${marca.dedo}</text>`;
       if (marca) etiquetas += `<text x="${cx}" y="${H + 16}" class="et ${marca.mano}">${nombreNota(marca.n)}</text>`;
       else if (m === 60) etiquetas += `<text x="${cx}" y="${H - 8}" class="do-central">Do4</text>`;
       x += W;
@@ -199,7 +201,7 @@ function htmlAcorde(a, r) {
   return `
     <div class="acorde">
       <p class="acorde-cab"><strong>${esc(a.acorde)}</strong>${a.compases ? ` <span>${/^\d/.test(a.compases) ? "compases " : ""}${esc(a.compases)}</span>` : ""}</p>
-      ${svgTeclado(a.mi || [], a.md || [], r)}
+      ${svgTeclado(a.mi || [], a.md || [], r, a.dedos_mi, a.dedos_md)}
       ${a.nota ? `<p class="acorde-nota">${esc(a.nota)}</p>` : ""}
     </div>`;
 }

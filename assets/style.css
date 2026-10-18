@@ -185,3 +185,4 @@ details[open] .flecha { transform: none; }
 .estado.hecha { color: var(--clasico); font-weight: 500; }
 .lista-der { display: flex; align-items: center; gap: 8px; flex: none; }
 .check { color: var(--clasico); font-weight: 500; }
+.teclado .dedo { font: 500 11px var(--sans); fill: #fff; text-anchor: middle; }
