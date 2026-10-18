@@ -49,25 +49,16 @@ function vistaSesion(id) {
         <p class="etiqueta-sup">${esUltima ? "Última sesión" : `Sesión ${esc(s.num)}`}${s.fecha ? ` · ${esc(s.fecha)}` : ""}</p>
         <h1>${esc(s.titulo)} <span class="tipo ${esc(s.tipo)}">${esc(s.tipo)}</span></h1>
         ${s.descripcion ? `<p class="desc">${esc(s.descripcion)}</p>` : ""}
-        ${s.teoria ? `<section class="bloque teoria"><div class="bloque-cab"><h2>Teoría</h2></div><div id="teoria"><p class="vacio">Cargando…</p></div></section>` : ""}
-        ${s.midi.length ? `<section class="bloque" id="midis"><div class="bloque-cab"><h2>Escuchar</h2></div></section>` : ""}
-        ${s.teclado?.length ? `
-          <section class="bloque">
-            <div class="bloque-cab">
-              <h2>Posición en el teclado</h2>
-              <span class="leyenda"><i class="mi"></i>Izquierda <i class="md"></i>Derecha</span>
-            </div>
-            ${s.teclado.map((a) => htmlAcorde(a, rango(s.teclado))).join("")}
-          </section>` : ""}
-        ${s.audio.map((a) => `<section class="bloque"><p class="midi-nombre">${esc(nombre(a))}</p><audio controls preload="none" src="${encodeURI(a)}" style="width:100%"></audio></section>`).join("")}
-        ${s.pdf.map((p, i) => `
-          <section class="bloque">
-            <div class="bloque-cab">
-              <h2>${esc(nombre(p))}</h2>
-              <a class="boton" href="${encodeURI(p)}" target="_blank" rel="noopener">Abrir PDF</a>
-            </div>
-            <div class="partitura" id="pdf-${i}"><p class="vacio">Cargando partitura…</p></div>
-          </section>`).join("")}
+        ${s.teoria ? seccion("teoria", "Teoría", "", `<div id="teoria" class="teoria"><p class="vacio">Cargando…</p></div>`) : ""}
+        ${s.midi.length ? seccion("escuchar", "Escuchar", "", `<div id="midis"></div>`) : ""}
+        ${s.teclado?.length ? seccion("teclado", "Posición en el teclado",
+            `<span class="leyenda"><i class="mi"></i>Izquierda <i class="md"></i>Derecha</span>`,
+            s.teclado.map((a) => htmlAcorde(a, rango(s.teclado))).join("")) : ""}
+        ${s.audio.map((a, i) => seccion(`audio-${i}`, nombre(a), "",
+            `<audio controls preload="none" src="${encodeURI(a)}" style="width:100%"></audio>`)).join("")}
+        ${s.pdf.map((p, i) => seccion(i ? `partitura-${i}` : "partitura", nombre(p),
+            `<a class="boton" href="${encodeURI(p)}" target="_blank" rel="noopener">Abrir PDF</a>`,
+            `<div class="partitura" id="pdf-${i}"><p class="vacio">Cargando partitura…</p></div>`)).join("")}
         <div class="descargas">
           ${[...s.pdf, ...s.midi].map((f) => `<a class="boton" href="${encodeURI(f)}" download>↓ ${esc(decodeURIComponent(f.split("/").pop()))}</a>`).join("")}
         </div>
@@ -84,6 +75,13 @@ function vistaSesion(id) {
       </aside>
     </div>`;
 
+  app.querySelectorAll("details[data-clave]").forEach((d) =>
+    d.addEventListener("toggle", () => {
+      const cerradas = new Set(leerCerradas());
+      d.open ? cerradas.delete(d.dataset.clave) : cerradas.add(d.dataset.clave);
+      try { localStorage.setItem("secciones-cerradas", JSON.stringify([...cerradas])); } catch {}
+    })
+  );
   const midis = document.getElementById("midis");
   s.midi.forEach((m) => midis.appendChild(crearReproductor(m)));
   s.pdf.forEach((p, i) => pintarPdf(p, document.getElementById(`pdf-${i}`)));
@@ -93,6 +91,54 @@ function vistaSesion(id) {
       .then((md) => { document.getElementById("teoria").innerHTML = marked.parse(md); })
       .catch(() => { document.getElementById("teoria").innerHTML = ""; });
   }
+}
+
+function leerCerradas() {
+  try { return JSON.parse(localStorage.getItem("secciones-cerradas")) || []; } catch { return []; }
+}
+
+// Sección desplegable; recuerda en este navegador cuáles has cerrado.
+function seccion(clave, titulo, extra, cuerpo) {
+  const abierta = !leerCerradas().includes(clave);
+  return `
+    <details class="bloque" data-clave="${esc(clave)}"${abierta ? " open" : ""}>
+      <summary class="bloque-cab">
+        <h2>${esc(titulo)}</h2>
+        <span class="cab-extra">${extra}<svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+      </summary>
+      <div class="bloque-cuerpo">${cuerpo}</div>
+    </details>`;
+}
+
+/* ---------- Audio en iOS ---------- */
+
+// iOS silencia Web Audio con el interruptor de silencio. Pasar la sesión a
+// «playback» y mantener un <audio> mudo sonando lo evita.
+let silencio = null;
+
+function wavMudo() {
+  const n = 800, buf = new ArrayBuffer(44 + n), v = new DataView(buf);
+  const txt = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  txt(0, "RIFF"); v.setUint32(4, 36 + n, true); txt(8, "WAVEfmt ");
+  v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, 8000, true); v.setUint32(28, 8000, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true);
+  txt(36, "data"); v.setUint32(40, n, true);
+  for (let i = 0; i < n; i++) v.setUint8(44 + i, 128);
+  return URL.createObjectURL(new Blob([buf], { type: "audio/wav" }));
+}
+
+function desbloquearAudio() {
+  try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch {}
+  if (!silencio) {
+    silencio = new Audio(wavMudo());
+    silencio.loop = true;
+    silencio.setAttribute("playsinline", "");
+  }
+  silencio.play().catch(() => {});
+}
+
+function silenciarDesbloqueo() {
+  if (silencio) silencio.pause();
 }
 
 /* ---------- Teclado ---------- */
@@ -145,7 +191,7 @@ function svgTeclado(mi, md, [desde, hasta]) {
 function htmlAcorde(a, r) {
   return `
     <div class="acorde">
-      <p class="acorde-cab"><strong>${esc(a.acorde)}</strong>${a.compases ? ` <span>compases ${esc(a.compases)}</span>` : ""}</p>
+      <p class="acorde-cab"><strong>${esc(a.acorde)}</strong>${a.compases ? ` <span>${/^\d/.test(a.compases) ? "compases " : ""}${esc(a.compases)}</span>` : ""}</p>
       ${svgTeclado(a.mi || [], a.md || [], r)}
       ${a.nota ? `<p class="acorde-nota">${esc(a.nota)}</p>` : ""}
     </div>`;
@@ -243,6 +289,7 @@ function crearReproductor(url) {
   }
 
   function fin() {
+    silenciarDesbloqueo();
     estado = "parado";
     transcurrido = 0;
     cancelAnimationFrame(raf);
@@ -254,9 +301,11 @@ function crearReproductor(url) {
   }
 
   boton.addEventListener("click", async () => {
+    desbloquearAudio();
     if (window.Tone && Tone.context.state !== "running") await Tone.start();
     if (estado === "sonando") {
       player.pause();
+      silenciarDesbloqueo();
       transcurrido = (performance.now() - t0) / 1000;
       estado = "pausa";
       cancelAnimationFrame(raf);

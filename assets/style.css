@@ -171,3 +171,11 @@ h2 { font-size: 20px; margin: 0 0 12px; }
 .teoria table { border-collapse: collapse; margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
 .teoria thead { display: none; }
 .teoria td { border: 1px solid var(--border); padding: 6px 14px; text-align: center; font-weight: 500; }
+
+/* Secciones desplegables */
+details.bloque > summary { list-style: none; cursor: pointer; margin-bottom: 0; }
+details.bloque > summary::-webkit-details-marker { display: none; }
+details.bloque[open] > summary { margin-bottom: 12px; }
+.cab-extra { display: flex; align-items: center; gap: 10px; }
+.flecha { width: 20px; height: 20px; fill: none; stroke: var(--text-3); stroke-width: 2; transition: transform 0.15s; transform: rotate(-90deg); }
+details[open] .flecha { transform: none; }

@@ -1,10 +1,67 @@
 [
   {
+    "id": "02-clasico-posicion-de-do",
+    "num": "02",
+    "tipo": "clásico",
+    "titulo": "Posición de Do · leer por intervalos",
+    "fecha": "2026-10-18",
+    "descripcion": "Día clásico de 15 minutos: 3' de técnica de cinco dedos en Do y Sol (ejercicio A), 4' de lectura de 8 compases en posición de Do (ejercicio B) y repaso tocando el B con las dos manos. Lee por intervalos: sube o baja, por grado o con salto.",
+    "teclado": [
+      {
+        "acorde": "Posición de Do",
+        "compases": "ejercicio A (c. 1–6) y ejercicio B",
+        "mi": [
+          "C3",
+          "D3",
+          "E3",
+          "F3",
+          "G3"
+        ],
+        "md": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "nota": "Der.: pulgar en Do4. Izq.: meñique en Do3."
+      },
+      {
+        "acorde": "Posición de Sol",
+        "compases": "ejercicio A (c. 7–12)",
+        "mi": [
+          "G2",
+          "A2",
+          "B2",
+          "C3",
+          "D3"
+        ],
+        "md": [
+          "G4",
+          "A4",
+          "B4",
+          "C5",
+          "D5"
+        ],
+        "nota": "Der.: pulgar en Sol4. Izq.: meñique en Sol2. Todo teclas blancas, igual que en Do."
+      }
+    ],
+    "teoria": "sesiones/02-clasico-posicion-de-do/teoria.md",
+    "pdf": [
+      "sesiones/02-clasico-posicion-de-do/posicion-de-do.pdf"
+    ],
+    "midi": [
+      "sesiones/02-clasico-posicion-de-do/ejercicio-A-tecnica.midi",
+      "sesiones/02-clasico-posicion-de-do/ejercicio-B-lectura.midi"
+    ],
+    "audio": []
+  },
+  {
     "id": "01-jazz-blues-guide-tones",
     "num": "01",
     "tipo": "jazz",
     "titulo": "Blues en Do · guide tones",
-    "fecha": null,
+    "fecha": "2026-10-17",
     "descripcion": "La derecha toca solo la 3ª y la 7ª de cada acorde; la izquierda, la fundamental. Fíjate en que la derecha apenas se mueve medio tono de un acorde a otro: esa es la gracia. El ejercicio B es lo mismo, pero marcando las cuatro negras del compás.",
     "teclado": [
       {

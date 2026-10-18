@@ -2,7 +2,7 @@
 
 Método de piano personal (jazz y clásico) para retomar el instrumento con sesiones de 15 minutos en días alternos. Esta web reúne el material de cada sesión para abrirlo desde cualquier dispositivo, también el móvil, y practicar con él.
 
-**Web:** https://santifu.github.io/Piano/
+**Web:** https://santifu.github.io/piano/
 
 ## Qué hay
 
