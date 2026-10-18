@@ -4,6 +4,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 let sesiones = [];
+let diario = [];
 let reproductorActivo = null;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -18,6 +19,7 @@ async function iniciar() {
   } catch {
     sesiones = [];
   }
+  diario = await cargarDiario();
   window.addEventListener("hashchange", ruta);
   ruta();
 }
@@ -42,12 +44,17 @@ function vistaSesion(id) {
   }
   const s = sesiones.find((x) => x.id === id) || sesiones[0];
   const esUltima = s === sesiones[0];
+  const hechas = new Set(diario.map((e) => e.fecha));
+  const hecha = (x) => x.fecha && hechas.has(x.fecha);
 
   app.innerHTML = `
     <div class="layout">
       <article>
         <p class="etiqueta-sup">${esUltima ? "Última sesión" : `Sesión ${esc(s.num)}`}${s.fecha ? ` · ${esc(s.fecha)}` : ""}</p>
         <h1>${esc(s.titulo)} <span class="tipo ${esc(s.tipo)}">${esc(s.tipo)}</span></h1>
+        <p class="estado ${hecha(s) ? "hecha" : ""}">${hecha(s)
+          ? `✓ Completada · <a href="#/diario">ver en el diario</a>`
+          : "Pendiente: al acabar, cuéntale a Claude qué tal te fue y la marcará en el diario."}</p>
         ${s.descripcion ? `<p class="desc">${esc(s.descripcion)}</p>` : ""}
         ${s.teoria ? seccion("teoria", "Teoría", "", `<div id="teoria" class="teoria"><p class="vacio">Cargando…</p></div>`) : ""}
         ${s.midi.length ? seccion("escuchar", "Escuchar", "", `<div id="midis"></div>`) : ""}
@@ -69,7 +76,7 @@ function vistaSesion(id) {
           ${sesiones.map((x) => `
             <li><a href="#/sesion/${encodeURIComponent(x.id)}" class="${x === s ? "activo" : ""}">
               <span><span class="num">${esc(x.num)}</span>${esc(x.titulo)}</span>
-              <span class="tipo ${esc(x.tipo)}">${esc(x.tipo)}</span>
+              <span class="lista-der">${hecha(x) ? '<span class="check" title="Completada">✓</span>' : ""}<span class="tipo ${esc(x.tipo)}">${esc(x.tipo)}</span></span>
             </a></li>`).join("")}
         </ul>
       </aside>
@@ -359,19 +366,23 @@ function pararReproductor() {
 
 /* ---------- Diario ---------- */
 
-async function vistaDiario() {
+async function cargarDiario() {
   let texto = "";
   try {
     texto = await (await fetch("diario.md", { cache: "no-store" })).text();
   } catch {}
   const bloques = texto.replace(/<!--[\s\S]*?-->/g, "").split(/^## /m).slice(1).map((b) => "## " + b.trim());
-  const entradas = bloques.map((b) => {
+  return bloques.map((b) => {
     const cab = b.split("\n")[0];
     const fecha = (cab.match(/\d{4}-\d{2}-\d{2}/) || [])[0];
     const min = Number((cab.match(/(\d+)\s*min/) || [])[1] || 0);
     const md = b.replace(/^(\s*[-*]\s+)([^:\n]{1,30}):/gm, "$1**$2:**");
     return { fecha, min, html: marked.parse(md) };
   });
+}
+
+async function vistaDiario() {
+  const entradas = (diario = await cargarDiario());
   const minutos = entradas.reduce((a, e) => a + e.min, 0);
   const ultima = entradas.map((e) => e.fecha).filter(Boolean).sort().pop();
 
@@ -383,7 +394,7 @@ async function vistaDiario() {
       <div class="stat"><span>Última</span><strong>${ultima ? ultima.slice(5).split("-").reverse().join("/") : "–"}</strong></div>
     </div>
     ${entradas.length
-      ? entradas.reverse().map((e) => `<div class="entrada">${e.html}</div>`).join("")
+      ? [...entradas].reverse().map((e) => `<div class="entrada">${e.html}</div>`).join("")
       : '<p class="vacio">Todavía no hay entradas. Aparecerán aquí al acabar la primera sesión.</p>'}`;
 }
 
