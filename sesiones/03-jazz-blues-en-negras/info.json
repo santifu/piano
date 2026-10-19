@@ -1,0 +1,11 @@
+{
+  "titulo": "Blues en Do · guide tones en negras",
+  "tipo": "jazz",
+  "fecha": "2026-10-19",
+  "descripcion": "Día jazz de 15 minutos: 3' cambiando de acorde con la digitación fija 1–4 (ejercicio A), 4' leyendo el blues solo con cifrado (ejercicio B) y 7' el blues completo con la derecha en negras cortas (ejercicio C).",
+  "teclado": [
+    { "acorde": "C7", "compases": "blues: 1, 3–4, 7–8, 11", "mi": ["C3"], "md": ["E4", "Bb4"], "dedos_mi": [5], "dedos_md": [1, 4], "nota": "3ª (Mi) con el pulgar y 7ª (Si♭) con el 4." },
+    { "acorde": "F7", "compases": "blues: 2, 5–6, 10", "mi": ["F2"], "md": ["Eb4", "A4"], "dedos_mi": [5], "dedos_md": [1, 4], "nota": "Misma forma de mano, medio tono más abajo: 7ª (Mi♭) con el pulgar y 3ª (La) con el 4." },
+    { "acorde": "G7", "compases": "blues: 9, 12", "mi": ["G2"], "md": ["F4", "B4"], "dedos_mi": [5], "dedos_md": [1, 4], "nota": "Desde C7, medio tono más arriba: 7ª (Fa) con el pulgar y 3ª (Si) con el 4." }
+  ]
+}
