@@ -4,7 +4,7 @@ Método de piano personal (jazz y clásico) para retomar el instrumento con sesi
 
 **Web:** https://santifu.github.io/piano/
 
-**¿De qué va?** Lee la [metodología](metodologia.md): quién, para qué, cómo se estructura cada lección y quién hace qué. Es también la portada de la web.
+**¿De qué va?** Lee la [metodología](metodologia.md): de dónde parto, las referencias, cómo practico y cómo es cada lección. Es también la portada de la web.
 
 ## Qué hay
 

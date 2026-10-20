@@ -1,0 +1,11 @@
+{
+  "titulo": "Manos juntas · posición de Do y de Sol",
+  "tipo": "clásico",
+  "fecha": "2026-10-20",
+  "descripcion": "Día clásico de 15 minutos: 3' de cinco dedos con las manos juntas en movimiento contrario (ejercicio A), 4' de lectura en posición de Sol (ejercicio B) y 7' de «Paseo en Do», la primera pieza a dos manos.",
+  "teclado": [
+    { "acorde": "Movimiento contrario", "compases": "ejercicio A", "mi": ["C3", "D3", "E3", "F3", "G3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 4, 3, 2, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Los pulgares empiezan juntos (Sol3 y Do4) y las manos se abren: el mismo dedo a la vez en las dos." },
+    { "acorde": "Posición de Sol", "compases": "ejercicio B", "mi": ["G2", "D3"], "md": ["G4", "A4", "B4", "C5", "D5"], "dedos_mi": [5, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Derecha: pulgar en Sol4. Izquierda: solo Sol2 (5) y Re3 (1)." },
+    { "acorde": "Paseo en Do", "compases": "pieza", "mi": ["C3", "G3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Derecha en posición de Do. Izquierda: Do3 con el 5 y Sol3 con el 1, en redondas." }
+  ]
+}
