@@ -169,7 +169,8 @@ h2 { font-size: 20px; margin: 0 0 12px; }
 .teoria ul { margin: 0 0 10px; padding-left: 20px; }
 .teoria strong { color: var(--text); font-weight: 500; }
 .teoria table { border-collapse: collapse; margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
-.teoria thead { display: none; }
+.teoria thead:not(:has(th:not(:empty))) { display: none; }
+.teoria th { border: 1px solid var(--border); padding: 6px 14px; font-weight: 500; color: var(--text-2); }
 .teoria td { border: 1px solid var(--border); padding: 6px 14px; text-align: center; font-weight: 500; }
 
 /* Secciones desplegables */
