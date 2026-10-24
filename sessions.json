@@ -1,5 +1,102 @@
 [
   {
+    "id": "06-clasico-notas-guia",
+    "num": "06",
+    "tipo": "clásico",
+    "titulo": "Notas guía · manos juntas por trozos",
+    "fecha": "2026-10-24",
+    "descripcion": "Día clásico de 15 minutos: 3' de movimiento contrario en posición de Sol (ejercicio A), 4' leyendo desde las notas guía, cada mano por separado (ejercicio B), y 7' de «Paseo en Do» a dos manos por trozos y a 50.",
+    "teclado": [
+      {
+        "acorde": "Notas guía",
+        "compases": "ejercicio B",
+        "mi": [
+          "C3",
+          "F3"
+        ],
+        "md": [
+          "C4",
+          "G4",
+          "C5"
+        ],
+        "dedos_mi": [],
+        "dedos_md": [],
+        "nota": "Izquierda: Do3 (2º espacio) y Fa3 (4ª línea, clave de Fa). Derecha: Do central, Sol4 (2ª línea, clave de Sol) y Do5 (3er espacio)."
+      },
+      {
+        "acorde": "Contrario en Sol",
+        "compases": "ejercicio A",
+        "mi": [
+          "G2",
+          "A2",
+          "B2",
+          "C3",
+          "D3"
+        ],
+        "md": [
+          "G4",
+          "A4",
+          "B4",
+          "C5",
+          "D5"
+        ],
+        "dedos_mi": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "Pulgares en Re3 y Sol4; las manos se abren a la vez con el mismo dedo."
+      },
+      {
+        "acorde": "Paseo en Do",
+        "compases": "pieza",
+        "mi": [
+          "C3",
+          "G3"
+        ],
+        "md": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "dedos_mi": [
+          5,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "Derecha en posición de Do. Izquierda: solo Do3 (5) y Sol3 (1), en redondas."
+      }
+    ],
+    "teoria": "sesiones/06-clasico-notas-guia/teoria.md",
+    "pdf": [
+      "sesiones/06-clasico-notas-guia/notas-guia.pdf"
+    ],
+    "midi": [
+      "sesiones/06-clasico-notas-guia/ejercicio-A-contrario-sol.midi",
+      "sesiones/06-clasico-notas-guia/ejercicio-B1-lectura-derecha.midi",
+      "sesiones/06-clasico-notas-guia/ejercicio-B2-lectura-izquierda.midi",
+      "sesiones/06-clasico-notas-guia/pieza-paseo-en-do-lento.midi"
+    ],
+    "audio": []
+  },
+  {
     "id": "05-jazz-shells-izquierda",
     "num": "05",
     "tipo": "jazz",
