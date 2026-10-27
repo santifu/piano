@@ -33,3 +33,15 @@ Material de cada sesión en `sesiones/NN-tipo-tema/`.
 - Salió: todo, pero con más esfuerzo que el jazz.
 - Atasco: coordinar las dos manos y leer nota a nota (en jazz basta con leer el acorde).
 - Próxima sesión: jazz. En la próxima de clásico, lectura con notas guía y manos juntas aún más lentas, con la izquierda muy sencilla.
+
+## 2026-10-22 · jazz · 15 min
+- Trabajado: shells 1-7 en la izquierda (A), blues leído por cifrado tocando los shells (B), blues con shell en la izquierda y la 3ª en la derecha (C).
+- Salió: todo bien.
+- Atasco: ninguno, pero el jazz se está quedando básico y repetitivo: tres sesiones seguidas del mismo blues en Do.
+- Próxima sesión: clásico. En la próxima de jazz, material nuevo: ii–V–I, otra tonalidad y algo de ritmo y melodía.
+
+## 2026-10-24 · clásico · 15 min
+- Trabajado: movimiento contrario en posición de Sol (A), lectura desde las notas guía (B) y «Paseo en Do» a dos manos por trozos (pieza).
+- Salió: todo bien. Las manos juntas, que antes costaban, ya van saliendo.
+- Atasco: ninguno.
+- Próxima sesión: jazz. En la próxima de clásico, un paso nuevo: el compás de 3/4 y un primer minueto.

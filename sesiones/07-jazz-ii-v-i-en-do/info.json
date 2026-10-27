@@ -1,0 +1,11 @@
+{
+  "titulo": "ii–V–I en Do",
+  "tipo": "jazz",
+  "fecha": "2026-10-25",
+  "descripcion": "Día jazz de 15 minutos: 3' de guide tones del ii–V–I (ejercicio A), 4' leyendo los tres acordes en otro orden (ejercicio B) y 7' con shells en la izquierda y una melodía en la derecha (ejercicio C). Primeros acordes m7 y maj7.",
+  "teclado": [
+    { "acorde": "Dm7", "compases": "1 y 5", "mi": ["D3", "F3"], "md": ["F4", "C5"], "dedos_mi": [5, 3], "dedos_md": [1, 5], "nota": "Izquierda: shell 1-3 (Re y Fa; en el ejercicio A, solo Re). Derecha: guide tones Fa (3ª) y Do (7ª)." },
+    { "acorde": "G7", "compases": "2 y 6", "mi": ["G2", "F3"], "md": ["F4", "B4"], "dedos_mi": [5, 1], "dedos_md": [1, 4], "nota": "Izquierda: shell 1-7 (Sol y Fa). Derecha: el Do baja a Si y el Fa se queda." },
+    { "acorde": "Cmaj7", "compases": "3–4 y 7–8", "mi": ["C3", "E3"], "md": ["E4", "B4"], "dedos_mi": [5, 3], "dedos_md": [1, 5], "nota": "Izquierda: shell 1-3 (Do y Mi). Derecha: el Fa baja a Mi y el Si se queda." }
+  ]
+}

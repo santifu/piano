@@ -1,0 +1,10 @@
+{
+  "titulo": "Compás de 3/4 · primer minueto",
+  "tipo": "clásico",
+  "fecha": "2026-10-26",
+  "descripcion": "Día clásico de 15 minutos: 3' de movimiento contrario en 3/4 acentuando el primer pulso (ejercicio A), 4' de lectura en 3/4 (ejercicio B) y 7' del «Minueto en Do», una pieza original de 16 compases a dos manos.",
+  "teclado": [
+    { "acorde": "Movimiento contrario", "compases": "ejercicio A", "mi": ["C3", "D3", "E3", "F3", "G3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 4, 3, 2, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Pulgares en Sol3 y Do4; acento en el primer pulso de cada compás." },
+    { "acorde": "Minueto en Do", "compases": "pieza", "mi": ["C3", "F3", "G3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 2, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Derecha en posición de Do, empieza con el 3 en Mi. Izquierda: Do (5), Fa (2) y Sol (1), una nota por compás." }
+  ]
+}

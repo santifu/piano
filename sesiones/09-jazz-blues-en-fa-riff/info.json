@@ -1,0 +1,11 @@
+{
+  "titulo": "Blues en Fa con riff",
+  "tipo": "jazz",
+  "fecha": "2026-10-27",
+  "descripcion": "Día jazz de 15 minutos: 3' del riff con nota azul sobre F7, B♭7 y C7 (ejercicio A), 4' leyendo el blues en Fa y tocando los shells (ejercicio B) y 7' del blues completo con shells y riff en swing (ejercicio C).",
+  "teclado": [
+    { "acorde": "F7", "compases": "1, 3–4, 7–8, 11", "mi": ["F2", "Eb3"], "md": ["F4", "Ab4", "A4", "C5"], "dedos_mi": [5, 1], "dedos_md": [1, 2, 3, 5], "nota": "Izquierda: shell 1-7. Derecha: Fa, La♭ → La (nota azul), Do." },
+    { "acorde": "Bb7", "compases": "2, 5–6, 10", "mi": ["Bb2", "D3"], "md": ["Bb3", "Db4", "D4", "F4"], "dedos_mi": [5, 3], "dedos_md": [1, 2, 3, 5], "nota": "Izquierda: shell 1-3; el Mi♭ de F7 baja medio tono a Re. Derecha: el mismo riff desde Si♭." },
+    { "acorde": "C7", "compases": "9, 12", "mi": ["C3", "E3"], "md": ["C4", "Eb4", "E4", "G4"], "dedos_mi": [5, 3], "dedos_md": [1, 2, 3, 5], "nota": "Izquierda: shell 1-3. Derecha: el riff desde Do central." }
+  ]
+}

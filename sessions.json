@@ -1,5 +1,263 @@
 [
   {
+    "id": "09-jazz-blues-en-fa-riff",
+    "num": "09",
+    "tipo": "jazz",
+    "titulo": "Blues en Fa con riff",
+    "fecha": "2026-10-27",
+    "descripcion": "Día jazz de 15 minutos: 3' del riff con nota azul sobre F7, B♭7 y C7 (ejercicio A), 4' leyendo el blues en Fa y tocando los shells (ejercicio B) y 7' del blues completo con shells y riff en swing (ejercicio C).",
+    "teclado": [
+      {
+        "acorde": "F7",
+        "compases": "1, 3–4, 7–8, 11",
+        "mi": [
+          "F2",
+          "Eb3"
+        ],
+        "md": [
+          "F4",
+          "Ab4",
+          "A4",
+          "C5"
+        ],
+        "dedos_mi": [
+          5,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "nota": "Izquierda: shell 1-7. Derecha: Fa, La♭ → La (nota azul), Do."
+      },
+      {
+        "acorde": "Bb7",
+        "compases": "2, 5–6, 10",
+        "mi": [
+          "Bb2",
+          "D3"
+        ],
+        "md": [
+          "Bb3",
+          "Db4",
+          "D4",
+          "F4"
+        ],
+        "dedos_mi": [
+          5,
+          3
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "nota": "Izquierda: shell 1-3; el Mi♭ de F7 baja medio tono a Re. Derecha: el mismo riff desde Si♭."
+      },
+      {
+        "acorde": "C7",
+        "compases": "9, 12",
+        "mi": [
+          "C3",
+          "E3"
+        ],
+        "md": [
+          "C4",
+          "Eb4",
+          "E4",
+          "G4"
+        ],
+        "dedos_mi": [
+          5,
+          3
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "nota": "Izquierda: shell 1-3. Derecha: el riff desde Do central."
+      }
+    ],
+    "teoria": "sesiones/09-jazz-blues-en-fa-riff/teoria.md",
+    "pdf": [
+      "sesiones/09-jazz-blues-en-fa-riff/blues-en-fa-riff.pdf"
+    ],
+    "midi": [
+      "sesiones/09-jazz-blues-en-fa-riff/ejercicio-A-riff.midi",
+      "sesiones/09-jazz-blues-en-fa-riff/ejercicio-C-blues-en-fa.midi"
+    ],
+    "audio": []
+  },
+  {
+    "id": "08-clasico-minueto-en-do",
+    "num": "08",
+    "tipo": "clásico",
+    "titulo": "Compás de 3/4 · primer minueto",
+    "fecha": "2026-10-26",
+    "descripcion": "Día clásico de 15 minutos: 3' de movimiento contrario en 3/4 acentuando el primer pulso (ejercicio A), 4' de lectura en 3/4 (ejercicio B) y 7' del «Minueto en Do», una pieza original de 16 compases a dos manos.",
+    "teclado": [
+      {
+        "acorde": "Movimiento contrario",
+        "compases": "ejercicio A",
+        "mi": [
+          "C3",
+          "D3",
+          "E3",
+          "F3",
+          "G3"
+        ],
+        "md": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "dedos_mi": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "Pulgares en Sol3 y Do4; acento en el primer pulso de cada compás."
+      },
+      {
+        "acorde": "Minueto en Do",
+        "compases": "pieza",
+        "mi": [
+          "C3",
+          "F3",
+          "G3"
+        ],
+        "md": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "dedos_mi": [
+          5,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "Derecha en posición de Do, empieza con el 3 en Mi. Izquierda: Do (5), Fa (2) y Sol (1), una nota por compás."
+      }
+    ],
+    "teoria": "sesiones/08-clasico-minueto-en-do/teoria.md",
+    "pdf": [
+      "sesiones/08-clasico-minueto-en-do/minueto-en-do.pdf"
+    ],
+    "midi": [
+      "sesiones/08-clasico-minueto-en-do/ejercicio-A-contrario-3-4.midi",
+      "sesiones/08-clasico-minueto-en-do/ejercicio-B-lectura-3-4.midi",
+      "sesiones/08-clasico-minueto-en-do/pieza-minueto-en-do.midi"
+    ],
+    "audio": []
+  },
+  {
+    "id": "07-jazz-ii-v-i-en-do",
+    "num": "07",
+    "tipo": "jazz",
+    "titulo": "ii–V–I en Do",
+    "fecha": "2026-10-25",
+    "descripcion": "Día jazz de 15 minutos: 3' de guide tones del ii–V–I (ejercicio A), 4' leyendo los tres acordes en otro orden (ejercicio B) y 7' con shells en la izquierda y una melodía en la derecha (ejercicio C). Primeros acordes m7 y maj7.",
+    "teclado": [
+      {
+        "acorde": "Dm7",
+        "compases": "1 y 5",
+        "mi": [
+          "D3",
+          "F3"
+        ],
+        "md": [
+          "F4",
+          "C5"
+        ],
+        "dedos_mi": [
+          5,
+          3
+        ],
+        "dedos_md": [
+          1,
+          5
+        ],
+        "nota": "Izquierda: shell 1-3 (Re y Fa; en el ejercicio A, solo Re). Derecha: guide tones Fa (3ª) y Do (7ª)."
+      },
+      {
+        "acorde": "G7",
+        "compases": "2 y 6",
+        "mi": [
+          "G2",
+          "F3"
+        ],
+        "md": [
+          "F4",
+          "B4"
+        ],
+        "dedos_mi": [
+          5,
+          1
+        ],
+        "dedos_md": [
+          1,
+          4
+        ],
+        "nota": "Izquierda: shell 1-7 (Sol y Fa). Derecha: el Do baja a Si y el Fa se queda."
+      },
+      {
+        "acorde": "Cmaj7",
+        "compases": "3–4 y 7–8",
+        "mi": [
+          "C3",
+          "E3"
+        ],
+        "md": [
+          "E4",
+          "B4"
+        ],
+        "dedos_mi": [
+          5,
+          3
+        ],
+        "dedos_md": [
+          1,
+          5
+        ],
+        "nota": "Izquierda: shell 1-3 (Do y Mi). Derecha: el Fa baja a Mi y el Si se queda."
+      }
+    ],
+    "teoria": "sesiones/07-jazz-ii-v-i-en-do/teoria.md",
+    "pdf": [
+      "sesiones/07-jazz-ii-v-i-en-do/ii-v-i-en-do.pdf"
+    ],
+    "midi": [
+      "sesiones/07-jazz-ii-v-i-en-do/ejercicio-A-guide-tones.midi",
+      "sesiones/07-jazz-ii-v-i-en-do/ejercicio-C-shells-y-melodia.midi"
+    ],
+    "audio": []
+  },
+  {
     "id": "06-clasico-notas-guia",
     "num": "06",
     "tipo": "clásico",
