@@ -45,3 +45,10 @@ Material de cada sesión en `sesiones/NN-tipo-tema/`.
 - Salió: todo bien. Las manos juntas, que antes costaban, ya van saliendo.
 - Atasco: ninguno.
 - Próxima sesión: jazz. En la próxima de clásico, un paso nuevo: el compás de 3/4 y un primer minueto.
+
+## 2026-10-25 · jazz · 15 min
+- Trabajado: guide tones del ii–V–I en Do (A), cifrado en otro orden (B) y shells con melodía (C).
+- Salió: todo, y le encantó.
+- Aportación propia: añadió un acorde más tras Cmaj7, con Mi–La en la mano derecha (el Si de Cmaj7 baja a La: suena a C6/Am7, el vi que lleva de vuelta a Dm7).
+- Atasco: ninguno.
+- Próxima sesión: clásico (08). En jazz, convertir su acorde en un turnaround completo: I–vi–ii–V.
