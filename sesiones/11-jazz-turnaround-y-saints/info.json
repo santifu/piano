@@ -1,0 +1,12 @@
+{
+  "titulo": "Turnaround · When the Saints Go Marching In",
+  "tipo": "jazz",
+  "fecha": "2026-11-07",
+  "descripcion": "Día jazz de 15 minutos: 3' del turnaround I–vi–ii–V con guide tones (ejercicio A), 4' leyendo el cifrado de la canción con shells (ejercicio B) y 7' de «When the Saints Go Marching In» con melodía y shells.",
+  "teclado": [
+    { "acorde": "Am7", "compases": "turnaround (ejercicio A)", "mi": ["A2"], "md": ["G4", "C5"], "dedos_mi": [5], "dedos_md": [1, 4], "nota": "Tu acorde de la sesión 7, completo: La en el bajo, Sol (7ª) y Do (3ª) arriba." },
+    { "acorde": "C", "compases": "canción: casi todos", "mi": ["C3", "E3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 3], "dedos_md": [1, 2, 3, 4, 5], "nota": "Izquierda: shell 1-3. Derecha: la melodía entera cabe en la posición de Do." },
+    { "acorde": "G7", "compases": "canción: 8 y 15", "mi": ["G2", "F3"], "md": ["D4"], "dedos_mi": [5, 1], "dedos_md": [2], "nota": "Izquierda: shell 1-7. Final de frase: la melodía se queda en Re." },
+    { "acorde": "C7 → F", "compases": "canción: 10–12", "mi": ["C3", "Bb3"], "md": ["C4"], "dedos_mi": [5, 1], "dedos_md": [1], "nota": "C7 (Do y Si♭) empuja hacia F; en F la izquierda baja a Fa2 y La2 (5 y 3)." }
+  ]
+}

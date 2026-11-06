@@ -57,6 +57,6 @@ Cada lección introduce **una sola dificultad nueva**. Si algo se atasca, la sig
 
 ## El material
 
-Las partituras son ejercicios originales u obras de dominio público (Bach, Burgmüller, Czerny, Schumann…). Los standards de jazz y las canciones con copyright se pueden practicar, pero aquí no se transcriben. De vez en cuando conviene una clase con un profesor para revisar la postura y el sonido.
+Las partituras son ejercicios originales u obras de dominio público (Bach, Burgmüller, Czerny, Schumann…). De vez en cuando, en lugar de un ejercicio, toca **una canción conocida** de dominio público adaptada al nivel del momento: temas clásicos célebres (Beethoven, Bach…) y canciones tradicionales y espirituales del jazz de Nueva Orleans. Los standards de jazz y las canciones con copyright se pueden practicar, pero aquí no se transcriben. De vez en cuando conviene una clase con un profesor para revisar la postura y el sonido.
 
 Cómo se ha hecho esta web, y quién ha aportado qué, está en el [README del repositorio](https://github.com/santifu/Piano#readme).

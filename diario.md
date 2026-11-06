@@ -52,3 +52,15 @@ Material de cada sesión en `sesiones/NN-tipo-tema/`.
 - Aportación propia: añadió un acorde más tras Cmaj7, con Mi–La en la mano derecha (el Si de Cmaj7 baja a La: suena a C6/Am7, el vi que lleva de vuelta a Dm7).
 - Atasco: ninguno.
 - Próxima sesión: clásico (08). En jazz, convertir su acorde en un turnaround completo: I–vi–ii–V.
+
+## 2026-10-26 · clásico · 15 min
+- Trabajado: movimiento contrario en 3/4 (A), lectura en 3/4 (B) y «Minueto en Do» (pieza).
+- Salió: todo; más fácil que la sesión de jazz siguiente.
+- Atasco: ninguno.
+- Próxima sesión: jazz. Pide intercalar de vez en cuando canciones que pueda reconocer, no solo ejercicios.
+
+## 2026-10-27 · jazz · 15 min
+- Trabajado: riff con nota azul sobre F7, B♭7 y C7 (A), blues en Fa leído por cifrado con shells (B) y blues completo con shells y riff en swing (C).
+- Salió: completa, pero más difícil que la clásica.
+- Atasco: más exigente que la anterior: tonalidad nueva, riff en corcheas y las dos manos a la vez.
+- Próxima sesión: clásico con una canción conocida. En jazz, consolidar sin subir tanto la dificultad y usar su acorde Mi–La (turnaround I–vi–ii–V) con una canción conocida.

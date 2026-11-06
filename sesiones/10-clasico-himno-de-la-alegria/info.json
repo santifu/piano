@@ -1,0 +1,10 @@
+{
+  "titulo": "Himno de la alegría · la negra con puntillo",
+  "tipo": "clásico",
+  "fecha": "2026-11-06",
+  "descripcion": "Día clásico de 15 minutos: 3' de negra con puntillo en movimiento contrario (ejercicio A), 4' de lectura rítmica con la derecha (ejercicio B) y 7' del «Himno de la alegría» de Beethoven a dos manos.",
+  "teclado": [
+    { "acorde": "Himno de la alegría", "compases": "canción", "mi": ["C3", "G3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Derecha en posición de Do; empieza con el 3 en Mi. Izquierda: Do (5) y Sol (1), en redondas." },
+    { "acorde": "Movimiento contrario", "compases": "ejercicio A", "mi": ["C3", "D3", "E3", "F3", "G3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 4, 3, 2, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Pulgares en Sol3 y Do4, con el ritmo de negra con puntillo y corchea." }
+  ]
+}
