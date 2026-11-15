@@ -1,0 +1,11 @@
+{
+  "titulo": "Boogie en Do · When the Saints a tempo",
+  "tipo": "jazz",
+  "fecha": "2026-11-16",
+  "descripcion": "Día jazz de 15 minutos: 3' del patrón de boogie en la izquierda (ejercicio A), 4' de blues en Do con boogie y riff (ejercicio B) y 7' de «When the Saints» con boogie, a tempo vivo.",
+  "teclado": [
+    { "acorde": "C · boogie", "compases": "todos los ejercicios", "mi": ["C3", "G3", "A3"], "md": ["C4", "Eb4", "E4", "G4"], "dedos_mi": [5, 2, 1], "dedos_md": [1, 2, 3, 5], "nota": "Izquierda: Do fijo con el 5; Sol (2) y La (1) alternan. Derecha: el riff con nota azul (Mi♭ → Mi)." },
+    { "acorde": "F · boogie", "compases": "blues y canción", "mi": ["F2", "C3", "D3"], "md": ["F4", "Ab4", "A4", "C5"], "dedos_mi": [5, 2, 1], "dedos_md": [1, 2, 3, 5], "nota": "Misma forma de mano, desde Fa2." },
+    { "acorde": "G · boogie", "compases": "blues y canción", "mi": ["G2", "D3", "E3"], "md": ["G4", "Bb4", "B4", "D5"], "dedos_mi": [5, 2, 1], "dedos_md": [1, 2, 3, 5], "nota": "Misma forma de mano, desde Sol2." }
+  ]
+}

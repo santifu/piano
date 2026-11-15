@@ -1,5 +1,230 @@
 [
   {
+    "id": "13-jazz-boogie-y-saints",
+    "num": "13",
+    "tipo": "jazz",
+    "titulo": "Boogie en Do · When the Saints a tempo",
+    "fecha": "2026-11-16",
+    "descripcion": "Día jazz de 15 minutos: 3' del patrón de boogie en la izquierda (ejercicio A), 4' de blues en Do con boogie y riff (ejercicio B) y 7' de «When the Saints» con boogie, a tempo vivo.",
+    "teclado": [
+      {
+        "acorde": "C · boogie",
+        "compases": "todos los ejercicios",
+        "mi": [
+          "C3",
+          "G3",
+          "A3"
+        ],
+        "md": [
+          "C4",
+          "Eb4",
+          "E4",
+          "G4"
+        ],
+        "dedos_mi": [
+          5,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "nota": "Izquierda: Do fijo con el 5; Sol (2) y La (1) alternan. Derecha: el riff con nota azul (Mi♭ → Mi)."
+      },
+      {
+        "acorde": "F · boogie",
+        "compases": "blues y canción",
+        "mi": [
+          "F2",
+          "C3",
+          "D3"
+        ],
+        "md": [
+          "F4",
+          "Ab4",
+          "A4",
+          "C5"
+        ],
+        "dedos_mi": [
+          5,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "nota": "Misma forma de mano, desde Fa2."
+      },
+      {
+        "acorde": "G · boogie",
+        "compases": "blues y canción",
+        "mi": [
+          "G2",
+          "D3",
+          "E3"
+        ],
+        "md": [
+          "G4",
+          "Bb4",
+          "B4",
+          "D5"
+        ],
+        "dedos_mi": [
+          5,
+          2,
+          1
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "nota": "Misma forma de mano, desde Sol2."
+      }
+    ],
+    "teoria": "sesiones/13-jazz-boogie-y-saints/teoria.md",
+    "pdf": [
+      "sesiones/13-jazz-boogie-y-saints/boogie-y-saints.pdf"
+    ],
+    "midi": [
+      "sesiones/13-jazz-boogie-y-saints/cancion-saints-boogie.midi",
+      "sesiones/13-jazz-boogie-y-saints/ejercicio-A-boogie.midi",
+      "sesiones/13-jazz-boogie-y-saints/ejercicio-B-blues-boogie.midi"
+    ],
+    "audio": []
+  },
+  {
+    "id": "12-clasico-minueto-en-sol",
+    "num": "12",
+    "tipo": "clásico",
+    "titulo": "Minueto en Sol · Petzold / Bach",
+    "fecha": "2026-11-15",
+    "descripcion": "Día clásico de 15 minutos: 3' de escala de Sol mayor con paso del pulgar (ejercicio A), 4' de lectura con corcheas en 3/4 (ejercicio B) y 7' de los primeros 8 compases del famoso Minueto en Sol.",
+    "teclado": [
+      {
+        "acorde": "Escala de Sol mayor",
+        "compases": "ejercicio A",
+        "mi": [],
+        "md": [
+          "G4",
+          "A4",
+          "B4",
+          "C5",
+          "D5",
+          "E5",
+          "F#5",
+          "G5"
+        ],
+        "dedos_mi": [],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "El pulgar pasa por debajo del 3 para llegar a Do. Fa siempre sostenido."
+      },
+      {
+        "acorde": "Minueto, compases 1–2",
+        "compases": "1–2",
+        "mi": [
+          "G3"
+        ],
+        "md": [
+          "G4",
+          "A4",
+          "B4",
+          "C5",
+          "D5"
+        ],
+        "dedos_mi": [
+          5
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "Posición de Sol: empieza con el 5 en Re y baja al pulgar en Sol."
+      },
+      {
+        "acorde": "Minueto, compases 3–4",
+        "compases": "3–4",
+        "mi": [
+          "B3",
+          "C4"
+        ],
+        "md": [
+          "C5",
+          "D5",
+          "E5",
+          "F#5",
+          "G5"
+        ],
+        "dedos_mi": [
+          3,
+          2
+        ],
+        "dedos_md": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "nota": "La mano sube: pulgar en Do5 y 5 en Sol5. Luego salta una octava abajo, al pulgar en Sol4."
+      },
+      {
+        "acorde": "Minueto, compases 7–8",
+        "compases": "7–8",
+        "mi": [
+          "D3",
+          "D4"
+        ],
+        "md": [
+          "F#4",
+          "G4",
+          "A4",
+          "B4"
+        ],
+        "dedos_mi": [
+          5,
+          1
+        ],
+        "dedos_md": [
+          2,
+          1,
+          2,
+          3
+        ],
+        "nota": "Fa♯ con el 2 y el pulgar pasa por debajo a Sol. La izquierda baja una octava, de Re4 a Re3."
+      }
+    ],
+    "teoria": "sesiones/12-clasico-minueto-en-sol/teoria.md",
+    "pdf": [
+      "sesiones/12-clasico-minueto-en-sol/minueto-en-sol.pdf"
+    ],
+    "midi": [
+      "sesiones/12-clasico-minueto-en-sol/ejercicio-A-escala-de-sol.midi",
+      "sesiones/12-clasico-minueto-en-sol/ejercicio-B-lectura-corcheas.midi",
+      "sesiones/12-clasico-minueto-en-sol/pieza-minueto-en-sol.midi"
+    ],
+    "audio": []
+  },
+  {
     "id": "11-jazz-turnaround-y-saints",
     "num": "11",
     "tipo": "jazz",

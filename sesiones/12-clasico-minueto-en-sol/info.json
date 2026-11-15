@@ -1,0 +1,12 @@
+{
+  "titulo": "Minueto en Sol · Petzold / Bach",
+  "tipo": "clásico",
+  "fecha": "2026-11-15",
+  "descripcion": "Día clásico de 15 minutos: 3' de escala de Sol mayor con paso del pulgar (ejercicio A), 4' de lectura con corcheas en 3/4 (ejercicio B) y 7' de los primeros 8 compases del famoso Minueto en Sol.",
+  "teclado": [
+    { "acorde": "Escala de Sol mayor", "compases": "ejercicio A", "mi": [], "md": ["G4", "A4", "B4", "C5", "D5", "E5", "F#5", "G5"], "dedos_mi": [], "dedos_md": [1, 2, 3, 1, 2, 3, 4, 5], "nota": "El pulgar pasa por debajo del 3 para llegar a Do. Fa siempre sostenido." },
+    { "acorde": "Minueto, compases 1–2", "compases": "1–2", "mi": ["G3"], "md": ["G4", "A4", "B4", "C5", "D5"], "dedos_mi": [5], "dedos_md": [1, 2, 3, 4, 5], "nota": "Posición de Sol: empieza con el 5 en Re y baja al pulgar en Sol." },
+    { "acorde": "Minueto, compases 3–4", "compases": "3–4", "mi": ["B3", "C4"], "md": ["C5", "D5", "E5", "F#5", "G5"], "dedos_mi": [3, 2], "dedos_md": [1, 2, 3, 4, 5], "nota": "La mano sube: pulgar en Do5 y 5 en Sol5. Luego salta una octava abajo, al pulgar en Sol4." },
+    { "acorde": "Minueto, compases 7–8", "compases": "7–8", "mi": ["D3", "D4"], "md": ["F#4", "G4", "A4", "B4"], "dedos_mi": [5, 1], "dedos_md": [2, 1, 2, 3], "nota": "Fa♯ con el 2 y el pulgar pasa por debajo a Sol. La izquierda baja una octava, de Re4 a Re3." }
+  ]
+}

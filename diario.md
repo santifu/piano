@@ -64,3 +64,15 @@ Material de cada sesión en `sesiones/NN-tipo-tema/`.
 - Salió: completa, pero más difícil que la clásica.
 - Atasco: más exigente que la anterior: tonalidad nueva, riff en corcheas y las dos manos a la vez.
 - Próxima sesión: clásico con una canción conocida. En jazz, consolidar sin subir tanto la dificultad y usar su acorde Mi–La (turnaround I–vi–ii–V) con una canción conocida.
+
+## 2026-11-06 · clásico · 15 min
+- Trabajado: negra con puntillo en movimiento contrario (A), lectura rítmica (B) y «Himno de la alegría» (canción).
+- Salió: todo.
+- Atasco: ninguno, pero la canción se le hizo muy lenta y sencilla: necesita algo más complejo para motivarse.
+- Próxima sesión: jazz. En clásico, una pieza conocida con más movimiento: corcheas, otra tonalidad y paso del pulgar.
+
+## 2026-11-07 · jazz · 15 min
+- Trabajado: turnaround I–vi–ii–V (A), cifrado de «When the Saints» con shells (B) y la canción con melodía y shells (C).
+- Salió: todo.
+- Atasco: ninguno; la canción, otra vez demasiado lenta.
+- Próxima sesión: clásico. En jazz, más energía: izquierda con ritmo (boogie) y tempos más vivos.
