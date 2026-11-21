@@ -265,10 +265,13 @@ let visor = null;
 function abrirVisor(url) {
   cerrarVisor();
   visor = document.createElement("div");
-  visor.className = "visor";
+  let pagina = false;
+  try { pagina = localStorage.getItem("visor-ajuste") === "pagina"; } catch {}
+  visor.className = "visor" + (pagina ? " ajuste-pagina" : "");
   visor.innerHTML = `
     <div class="visor-barra">
       <span>${esc(nombre(url))}</span>
+      <button class="boton" data-ajuste>${pagina ? "↔ Ajustar al ancho" : "↕ Página entera"}</button>
       <a class="boton" href="${encodeURI(url)}" target="_blank" rel="noopener">PDF</a>
       <button class="boton" data-cerrar aria-label="Cerrar">✕ Cerrar</button>
     </div>
@@ -276,6 +279,11 @@ function abrirVisor(url) {
   document.body.appendChild(visor);
   document.body.classList.add("con-visor");
   visor.querySelector("[data-cerrar]").addEventListener("click", cerrarVisor);
+  visor.querySelector("[data-ajuste]").addEventListener("click", (e) => {
+    const ahora = visor.classList.toggle("ajuste-pagina");
+    e.currentTarget.textContent = ahora ? "↔ Ajustar al ancho" : "↕ Página entera";
+    try { localStorage.setItem("visor-ajuste", ahora ? "pagina" : "ancho"); } catch {}
+  });
   const pantalla = visor.requestFullscreen || visor.webkitRequestFullscreen;
   if (pantalla) Promise.resolve(pantalla.call(visor)).catch(() => {});
   pintarPdf(url, visor.querySelector(".visor-paginas"));

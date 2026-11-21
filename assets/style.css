@@ -232,3 +232,5 @@ body.con-visor { overflow: hidden; }
 .visor-paginas { max-width: 1400px; margin: 0 auto; padding: 8px; }
 .visor-paginas canvas { display: block; width: 100%; height: auto; background: #fff; border-radius: 4px; }
 .visor-paginas canvas + canvas { margin-top: 8px; }
+.visor.ajuste-pagina .visor-paginas canvas { width: auto; max-width: 100%; max-height: calc(100vh - 60px); margin-left: auto; margin-right: auto; }
+@media (max-width: 600px) { .visor-barra span { display: none; } }
