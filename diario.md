@@ -76,3 +76,15 @@ Material de cada sesión en `sesiones/NN-tipo-tema/`.
 - Salió: todo.
 - Atasco: ninguno; la canción, otra vez demasiado lenta.
 - Próxima sesión: clásico. En jazz, más energía: izquierda con ritmo (boogie) y tempos más vivos.
+
+## 2026-11-15 · clásico · 15 min
+- Trabajado: escala de Sol mayor con paso del pulgar (A), lectura con corcheas en 3/4 (B) y Minueto en Sol, compases 1–8 (pieza).
+- Salió: todo, lento pero coordinado.
+- Atasco: ninguno; el tempo aún está lejos del real (108).
+- Próxima sesión: jazz. En clásico, subir el tempo del minueto y seguir con sus compases 9–16.
+
+## 2026-11-16 · jazz · 15 min
+- Trabajado: boogie en la izquierda (A), blues en Do con boogie y riff (B) y «When the Saints» con boogie (canción).
+- Salió: todo, lento pero coordinado: la independencia de manos funciona.
+- Atasco: ninguno; falta velocidad.
+- Próxima sesión: clásico. En jazz, mantener el boogie y ganar soltura y tempo antes de añadir algo nuevo.
