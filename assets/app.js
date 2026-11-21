@@ -26,6 +26,7 @@ async function iniciar() {
 
 function ruta() {
   pararReproductor();
+  cerrarVisor();
   const [, seccion, id] = location.hash.split("/");
   const activa = seccion === "diario" ? "diario" : seccion === "sesion" || seccion === "sesiones" ? "sesiones" : "inicio";
   document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("activo", a.dataset.nav === activa));
@@ -78,8 +79,9 @@ function vistaSesion(id) {
   const hecha = (x) => x.fecha && hechas.has(x.fecha);
 
   app.innerHTML = `
-    <div class="layout">
+    <div class="layout${listaOculta() ? " sin-lista" : ""}">
       <article>
+        <button class="boton boton-lista" data-lista>${listaOculta() ? "☰ Mostrar sesiones" : "Ocultar sesiones →"}</button>
         <p class="etiqueta-sup">${esUltima ? "Última sesión" : `Sesión ${esc(s.num)}`}${s.fecha ? ` · ${esc(s.fecha)}` : ""}</p>
         <h1>${esc(s.titulo)} <span class="tipo ${esc(s.tipo)}">${esc(s.tipo)}</span></h1>
         <p class="estado ${hecha(s) ? "hecha" : ""}">${hecha(s)
@@ -94,7 +96,7 @@ function vistaSesion(id) {
         ${s.audio.map((a, i) => seccion(`audio-${i}`, nombre(a), "",
             `<audio controls preload="none" src="${encodeURI(a)}" style="width:100%"></audio>`)).join("")}
         ${s.pdf.map((p, i) => seccion(i ? `partitura-${i}` : "partitura", nombre(p),
-            `<a class="boton" href="${encodeURI(p)}" target="_blank" rel="noopener">Abrir PDF</a>`,
+            `<button class="boton" data-pantalla="${esc(p)}">⛶ Pantalla completa</button>`,
             `<div class="partitura" id="pdf-${i}"><p class="vacio">Cargando partitura…</p></div>`)).join("")}
         <div class="descargas">
           ${[...s.pdf, ...s.midi].map((f) => `<a class="boton" href="${encodeURI(f)}" download>↓ ${esc(decodeURIComponent(f.split("/").pop()))}</a>`).join("")}
@@ -118,6 +120,22 @@ function vistaSesion(id) {
       d.open ? cerradas.delete(d.dataset.clave) : cerradas.add(d.dataset.clave);
       try { localStorage.setItem("secciones-cerradas", JSON.stringify([...cerradas])); } catch {}
     })
+  );
+  app.querySelector("[data-lista]").addEventListener("click", () => {
+    try { localStorage.setItem("lista-oculta", listaOculta() ? "0" : "1"); } catch {}
+    const ocultar = !app.querySelector(".layout").classList.contains("sin-lista");
+    app.querySelector(".layout").classList.toggle("sin-lista", ocultar);
+    app.querySelector("[data-lista]").textContent = ocultar ? "☰ Mostrar sesiones" : "Ocultar sesiones →";
+  });
+  app.querySelectorAll("[data-pantalla]").forEach((b) =>
+    b.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      abrirVisor(b.dataset.pantalla);
+    })
+  );
+  app.querySelectorAll(".partitura").forEach((c, i) =>
+    c.addEventListener("click", () => abrirVisor(s.pdf[i]))
   );
   const midis = document.getElementById("midis");
   s.midi.forEach((m) => midis.appendChild(crearReproductor(m)));
@@ -235,6 +253,49 @@ function htmlAcorde(a, r) {
       ${a.nota ? `<p class="acorde-nota">${esc(a.nota)}</p>` : ""}
     </div>`;
 }
+
+function listaOculta() {
+  try { return localStorage.getItem("lista-oculta") === "1"; } catch { return false; }
+}
+
+/* ---------- Visor de partitura a pantalla completa ---------- */
+
+let visor = null;
+
+function abrirVisor(url) {
+  cerrarVisor();
+  visor = document.createElement("div");
+  visor.className = "visor";
+  visor.innerHTML = `
+    <div class="visor-barra">
+      <span>${esc(nombre(url))}</span>
+      <a class="boton" href="${encodeURI(url)}" target="_blank" rel="noopener">PDF</a>
+      <button class="boton" data-cerrar aria-label="Cerrar">✕ Cerrar</button>
+    </div>
+    <div class="visor-paginas"><p class="vacio">Cargando partitura…</p></div>`;
+  document.body.appendChild(visor);
+  document.body.classList.add("con-visor");
+  visor.querySelector("[data-cerrar]").addEventListener("click", cerrarVisor);
+  const pantalla = visor.requestFullscreen || visor.webkitRequestFullscreen;
+  if (pantalla) Promise.resolve(pantalla.call(visor)).catch(() => {});
+  pintarPdf(url, visor.querySelector(".visor-paginas"));
+}
+
+function cerrarVisor() {
+  if (!visor) return;
+  const fuera = document.fullscreenElement || document.webkitFullscreenElement;
+  if (fuera) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+  visor.remove();
+  visor = null;
+  document.body.classList.remove("con-visor");
+}
+
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarVisor(); });
+["fullscreenchange", "webkitfullscreenchange"].forEach((ev) =>
+  document.addEventListener(ev, () => {
+    if (visor && !(document.fullscreenElement || document.webkitFullscreenElement)) cerrarVisor();
+  })
+);
 
 async function pintarPdf(url, contenedor) {
   try {

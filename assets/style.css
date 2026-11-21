@@ -207,3 +207,28 @@ details[open] .flecha { transform: none; }
 .metodologia th { font-weight: 500; }
 .metodologia a { color: var(--accent); }
 @media (max-width: 420px) { .top nav a { padding: 6px 9px; } }
+
+/* Ocultar la lista de sesiones */
+.boton-lista { display: none; float: right; margin-left: 12px; }
+@media (min-width: 900px) {
+  .boton-lista { display: inline-flex; }
+  .layout.sin-lista { grid-template-columns: minmax(0, 1fr); }
+  .layout.sin-lista .lateral { display: none; }
+}
+
+/* Visor de partitura a pantalla completa */
+.partitura canvas { cursor: zoom-in; }
+body.con-visor { overflow: hidden; }
+.visor {
+  position: fixed; inset: 0; z-index: 100;
+  background: var(--bg); overflow: auto; -webkit-overflow-scrolling: touch;
+}
+.visor-barra {
+  position: sticky; top: 0; z-index: 1;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.visor-barra span { flex: 1; font: 500 16px var(--serif); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.visor-paginas { max-width: 1400px; margin: 0 auto; padding: 8px; }
+.visor-paginas canvas { display: block; width: 100%; height: auto; background: #fff; border-radius: 4px; }
+.visor-paginas canvas + canvas { margin-top: 8px; }
