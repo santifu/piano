@@ -1,0 +1,11 @@
+{
+  "titulo": "Boogie: cambios rápidos · Jingle Bells",
+  "tipo": "jazz",
+  "fecha": "2026-11-22",
+  "descripcion": "Día jazz de 15 minutos: 3' de boogie cambiando de acorde en cada compás, con el nuevo D7 (ejercicio A), 4' de blues en Fa leyendo el cifrado y tocando el boogie (ejercicio B) y 7' de «Jingle Bells» con boogie.",
+  "teclado": [
+    { "acorde": "D7 · boogie", "compases": "A: 6 · canción: 7", "mi": ["D3", "A3", "B3"], "md": ["D4", "E4"], "dedos_mi": [5, 2, 1], "dedos_md": [2, 3], "nota": "Acorde nuevo: la misma forma de boogie desde Re. En la canción, la derecha toca Mi y Re." },
+    { "acorde": "Bb7 · boogie", "compases": "ejercicio B", "mi": ["Bb2", "F3", "G3"], "md": [], "dedos_mi": [5, 2, 1], "dedos_md": [], "nota": "Meñique en tecla negra (Si♭2): la mano entra un poco hacia el fondo." },
+    { "acorde": "Jingle Bells · C", "compases": "canción", "mi": ["C3", "G3", "A3"], "md": ["C4", "D4", "E4", "F4", "G4"], "dedos_mi": [5, 2, 1], "dedos_md": [1, 2, 3, 4, 5], "nota": "Derecha en posición de Do; empieza con el 3 en Mi. Izquierda: el boogie de Do." }
+  ]
+}
